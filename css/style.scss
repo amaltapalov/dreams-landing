@@ -1,0 +1,482 @@
+$text_color: #ffffff;
+$accent_color: #B51FE0;
+$accent_color_dark: darken($accent_color, 20%);
+$secondary_color: #05C118;
+$secondary_color_dark: darken($secondary_color, 20%);
+// $copy_button_color: darken($accent_color, 5%);
+$terms_color: darken($accent_color, 30%);
+
+@mixin fluid-font($min-font-size: 12px,
+	$max-font-size: 21px,
+	$lower-range: 320px,
+	$upper-range: 500px) {
+	font-size: calc(#{$min-font-size} + #{(
+ ($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))
+}
+
+* ((100vw - #{$lower-range}) / #{(
+ ($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))
+}
+
+));
+
+@media screen and (max-width: $lower-range) {
+	font-size: $min-font-size !important;
+}
+
+@media screen and (min-width: $upper-range) {
+	font-size: $max-font-size !important;
+}
+}
+
+/* copy coupon button - start */
+.RowBoxCode.code1 {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 65px;
+	line-height: 45px;
+	margin: 0 auto;
+	position: relative;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+.BoxCode {
+	font-size: 27px;
+	padding-top: 2px;
+	display: block;
+	width: 50%;
+	height: 45px;
+	line-height: 40px;
+	margin: 0px;
+	position: relative;
+	color: $text_color;
+	float: left;
+	border-left: 2px solid $secondary_color;
+	border-top: 2px solid $secondary_color;
+	border-bottom: 2px solid $secondary_color;
+	background-color: rgba(47, 0, 15, 0.55);
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+
+.BtnCopy {
+	display: block;
+	width: 40%;
+	height: 45px;
+	line-height: 45px;
+	margin: 0px;
+	position: relative;
+	background-color: $secondary_color;
+	border-right: 3px solid $secondary_color;
+	border-top: 3px solid $secondary_color;
+	border-bottom: 3px solid $secondary_color;
+	border-left: 3px solid $secondary_color;
+	color: #fff;
+	float: left;
+	cursor: pointer;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	transition: 0.3s;
+
+	&:hover {
+		background: $secondary_color_dark;
+	}
+
+	&>.BoxCode {
+		color: $text_color !important;
+	}
+}
+
+.code1 {
+	&.BoxCode {
+		color: #fff !important;
+
+		@media screen and (max-width: 360px) {
+			font-size: 21px;
+		}
+	}
+
+	&.BtnCopy {
+		background: #00b7dc !important;
+		color: #fff !important;
+
+		@media screen and (max-width: 360px) {
+			font-size: 14px;
+		}
+	}
+}
+
+/* copy coupon button - end */
+
+body {
+	min-height: 100vh;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	color: #fff;
+	font-size: 15px;
+	background: #000000;
+	background: -moz-linear-gradient(top, #000000 59%, #290049 99%);
+	background: -webkit-linear-gradient(top, #000000 59%, #290049 99%);
+	background: linear-gradient(to bottom, #000000 59%, #290049 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#290049', GradientType=0);
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2 {
+	text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+strong,
+em {
+	padding: 0;
+	margin: 0;
+}
+
+h2 {
+	color: #fff;
+	font-weight: 700;
+	font-size: 19px;
+	padding: 0 10px 15px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.section-inner {
+	max-width: 1240px;
+	width: 95%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.toprow {
+	padding: 10px 0px 5px 0px;
+
+	.toprow-inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.logo {
+			width: 210px;
+			padding: 10px 0 15px;
+			filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.6));
+
+			@media screen and (max-width: 540px) {
+				width: 150px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.toprow-inner {
+		display: block;
+		text-align: center;
+	}
+}
+
+header.section {
+	padding: 0 0 55px;
+	background: transparent url("../img/bkg.jpg") center top no-repeat;
+
+	@media only screen and (max-width: 860px) {
+		padding: 0;
+		background-size: 160%;
+	}
+
+	@media only screen and (max-width: 640px) {
+		background: transparent url("../img/bkg-mobile.jpg") center top no-repeat;
+		background-size: 100% auto;
+	}
+}
+
+.bonus-offer {
+	.bonus-block {
+		max-width: 540px;
+		margin: 0 auto;
+		text-align: center;
+		border-radius: 3px;
+		font-size: 17px;
+
+		.bonus-block-inner {
+			padding: 45px 10px 12px;
+		}
+	}
+
+	.additional-info {
+		padding: 15px 0 10px 0;
+	}
+
+	.bonus-img {
+		max-width: 460px;
+		width: 93%;
+	}
+
+	h1,
+	h2 {
+		text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+	}
+
+	h1 {
+		@include fluid-font(24px, 28px, 640px, 860px);
+	}
+
+	h2 {
+		@include fluid-font(20px, 24px, 640px, 860px);
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.bonus-offer .bonus-block {
+		max-width: none;
+		border-left: none;
+		border-bottom: none;
+		border-radius: 0;
+		border-right: 0;
+
+		.coupon-code {
+			font-size: 27px;
+			margin: 0 auto 15px;
+
+			strong {
+				display: inline;
+				font-size: inherit;
+				line-height: normal;
+			}
+		}
+
+		.bonus-block-inner {
+			padding: 35vw 0 0 0;
+		}
+
+		.main-promo {
+			padding-top: 37.3%;
+			padding-bottom: 0px;
+			font-size: 5vw;
+			font-weight: bold;
+			text-shadow: 0 0 9px rgba(0, 0, 0, 0.9);
+			font-size: 24px;
+			color: #fff;
+			font-weight: 700;
+			padding: 5px;
+
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		.bonus-offer .bonus-block .coupon-code .bonus-offer .bonus-block .border-bkg,
+		.bonus-offer .bonus-block .bkg {
+			display: none;
+		}
+	}
+
+	.bonus-offer .bonus-block .main-promo img {
+		width: 100%;
+		margin-top: 0px;
+	}
+}
+
+/* tracking pixel fix */
+img[src^="//my.rtmark.net/"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.section-container {
+	padding: 25px 0 75px;
+}
+
+.heading-games {
+	text-align: center;
+	padding: 0 15px;
+	@include fluid-font(18px, 28px, 600px, 1000px);
+
+	span {
+		color: $accent_color;
+	}
+}
+
+/*3 blocks in a row - start*/
+.games {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	text-align: center;
+	padding: 25px 0 0;
+
+	@media screen and (max-width: 1000px) {
+		flex-direction: column;
+	}
+
+	li {
+		width: 31.36%;
+		max-width: 375px;
+		margin: 15px 5px 30px;
+
+		@media screen and (max-width: 1000px) {
+			width: 90%;
+			max-width: 500px;
+			margin: 0 auto 30px;
+		}
+
+		h3 {
+			text-transform: uppercase;
+			font-size: 16px;
+
+			@media screen and (max-width: 1000px) {
+				@include fluid-font(18px, 24px, 400px, 1000px);
+			}
+		}
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		border: 0;
+		outline: none;
+		display: block;
+		padding: 15px 10px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 1.4;
+
+		@media screen and (max-width: 540px) {
+			font-size: 14px;
+		}
+	}
+}
+
+/*3 blocks in a row - end*/
+
+#BarFooterTerms {
+	color: #bfbfbf;
+	display: block;
+	width: 100%;
+	height: auto;
+	min-height: 4px;
+	background: $terms_color;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 9999999;
+}
+
+#BarFooterTerms #BoxButtonTerms {
+	display: block;
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	top: -38px;
+	left: 0;
+	z-index: 0;
+	text-align: center;
+}
+
+#BarFooterTerms #ButtonTerms {
+	border-radius: 5px 5px 0 0;
+	display: block;
+	width: 130px;
+	height: 25px;
+	margin: 0 auto;
+	padding: 8px 0;
+	background: $terms_color;
+	font-weight: 500 !important;
+	text-transform: uppercase;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+#BarFooterTerms footer {
+	display: block;
+	width: 90%;
+	height: auto;
+	max-width: 1200px;
+	margin: 5px auto 10px;
+	line-height: 1.3;
+	padding: 20px 5px 10px;
+	text-align: justify;
+	font-weight: 400 !important;
+	font-size: 14px;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+#BarFooterTerms footer p {
+	display: block;
+	width: 100%;
+	margin: 20px auto;
+	font-weight: 400 !important;
+	font-size: 11px;
+	letter-spacing: 0;
+	color: #000;
+}
+
+.button {
+	display: inline-block;
+	padding: 18px 15px;
+	@include fluid-font(20px, 25px, 600px, 1000px);
+	transition: 0.1s;
+	max-width: 575px;
+	width: 87%;
+	border-radius: 50px;
+	filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.4));
+
+	&:hover {
+		transform: scale(1.02);
+		filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0));
+	}
+}
+
+.accent-gradient {
+	background: $accent_color;
+	background: -moz-linear-gradient(top,
+			$accent_color 0%,
+			$accent_color_dark 100%);
+	background: -webkit-linear-gradient(top,
+			$accent_color 0%,
+			$accent_color_dark 100%);
+	background: linear-gradient(to bottom,
+			$accent_color 0%,
+			$accent_color_dark 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$accent_color', endColorstr='$accent_color_dark', GradientType=0);
+}

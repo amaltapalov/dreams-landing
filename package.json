@@ -1,0 +1,20 @@
+{
+	"name": "DC-3GIFS-LANDING",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "node-sass css/style.scss -o css --source-map-embed && postcss css/style.css -d css",
+		"start": "nodemon --watch css/ --exec \"npm run build\" -e scss"
+	},
+	"keywords": [],
+	"author": "Amal Tapalov",
+	"license": "ISC",
+	"devDependencies": {
+		"autoprefixer": "^9.5.1",
+		"cssnano": "^4.1.10",
+		"node-sass": "^4.12.0",
+		"nodemon": "^1.19.0",
+		"postcss": "^7.0.14"
+	}
+}
