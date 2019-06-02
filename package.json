@@ -1,20 +1,58 @@
 {
-	"name": "DC-3GIFS-LANDING",
+	"name": "webpack-project-base",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "Webpack based project backbone",
+	"private": true,
 	"scripts": {
-		"build": "node-sass css/style.scss -o css --source-map-embed && postcss css/style.css -d css",
-		"start": "nodemon --watch css/ --exec \"npm run build\" -e scss"
+		"start": "webpack-dev-server --open --config webpack.server.js",
+		"build": "webpack --config webpack.prod.js"
 	},
-	"keywords": [],
-	"author": "Amal Tapalov",
-	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amaltapalov/webpack-project.git"
+	},
+	"keywords": [
+		"webpack",
+		"project",
+		"base"
+	],
+	"author": {
+		"name": "Amal Tapalov",
+		"email": "amaltapalov@gmail.com"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/amaltapalov/webpack-project/issues"
+	},
+	"homepage": "https://github.com/amaltapalov/webpack-project#readme",
 	"devDependencies": {
-		"autoprefixer": "^9.5.1",
-		"cssnano": "^4.1.10",
-		"node-sass": "^4.12.0",
-		"nodemon": "^1.19.0",
-		"postcss": "^7.0.14"
+		"@babel/core": "^7.3.4",
+		"@babel/preset-env": "^7.3.4",
+		"babel-loader": "^8.0.5",
+		"clean-webpack-plugin": "^1.0.1",
+		"css-loader": "^1.0.1",
+		"file-loader": "^2.0.0",
+		"html-loader": "^0.5.5",
+		"html-webpack-plugin": "^3.2.0",
+		"image-webpack-loader": "^4.6.0",
+		"imports-loader": "^0.8.0",
+		"mini-css-extract-plugin": "^0.4.5",
+		"node-sass": "^4.11.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.1",
+		"postcss-loader": "^3.0.0",
+		"postcss-preset-env": "^6.6.0",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.1",
+		"uglifyjs-webpack-plugin": "^2.1.2",
+		"webpack": "^4.29.6",
+		"webpack-cli": "^3.2.3",
+		"webpack-dev-server": "^3.2.1",
+		"write-assets-webpack-plugin": "^1.0.4"
+	},
+	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"gsap": "^2.1.2",
+		"jquery": "^3.3.1",
+		"scrollmagic": "^2.0.6"
 	}
 }
