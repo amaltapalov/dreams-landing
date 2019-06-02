@@ -1,5 +1,4 @@
 $(window).ready(function() {
-	// Here is 1st coupon
 	$("#BoxCodeButton-1").click(function() {
 		$(this).text("COPIED"),
 			$("#BoxCodeButton-2").text("COPY COUPON"),
@@ -26,6 +25,6 @@ $(window).ready(function() {
 			});
 	});
 
-	// Change coupon 1 text here
+	// Change coupon text here
 	new ClipboardJS("#BoxCodeButton-1");
 });
