@@ -1,6 +1,5 @@
-<p>
-  Landing based on webpack<img src="./webpack.png" />
-</p>
+##  Landing based on webpack
+
 
 -   nodejs 8+
 -   npm 6+
