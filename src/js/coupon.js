@@ -25,6 +25,6 @@ $(window).ready(function() {
 			});
 	});
 
-	// Change coupon text here
+	// Change coupon ID here
 	new ClipboardJS("#BoxCodeButton-1");
 });
