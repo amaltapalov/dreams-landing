@@ -13,7 +13,7 @@ module.exports = {
 		app: "./src/index.js"
 	},
 	output: {
-		path: path.resolve(__dirname, "dist"),
+		path: path.resolve(__dirname, "build"),
 		filename: "[name].bundle.[contenthash].js"
 	},
 	// devtool: 'source-map',
@@ -124,7 +124,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new CleanWebpackPlugin(["dist/*"]),
+		new CleanWebpackPlugin(["build/*"]),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: "src/index.html"
