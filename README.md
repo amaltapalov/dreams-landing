@@ -1,6 +1,7 @@
 ##  Landing based on webpack
 Landings page with GSAP Tweenmax, Clipboard.js, jQuery functionality based on Webpack 
 
+## Requirements
 
 -   nodejs 8+
 -   npm 6+
